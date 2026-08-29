@@ -22,7 +22,9 @@ data, and the live RuneLite scene.
   entrances, portals, lift platforms, gangplanks, bridges, rocks, cracks,
   chasms, ropeswings, rubble, shelves, and other proven object transports.
 - Use eligible agility shortcuts only when their current skill, item,
-  equipment, varbit, and varp requirements pass.
+  equipment, quest, varbit, and varp requirements pass. When a chosen route
+  needs climbing boots, a crossbow, or a Mith grapple already in the inventory,
+  Efficient Walker equips it before moving.
 - Preview routes from scene tiles or the world map with `Dry-run walk`, execute
   them with `Test walk`, display per-floor overlays, or accept a destination
   through `EfficientWalker#walkTo(WorldPoint)`.
@@ -37,10 +39,9 @@ every location having been manually tested.
 - Global routing is limited to the bundled collision map and supported
   transitions. Unmapped areas and global or multi-plane instances are rejected.
 - Teleports, boats and ferries, NPC transports, payment transports, and general
-  dialogue transports are not supported. Stronghold security-door dialogue is
-  the explicit exception.
+  dialogue transports are not supported.
 - Ordinary quest-, skill-, and item-gated transports remain excluded. Eligible
-  agility shortcuts and Stronghold portals have their own verified checks.
+  agility shortcuts have their own verified checks.
 - Boundary handling supports loaded wall objects with `Open` or `Pass`. Other
   boundary actions require explicit support.
 - Unsupported same-plane transports fail closed. Calling `walkTo` reports that
@@ -51,13 +52,13 @@ every location having been manually tested.
 
 #### 1. Add the release JAR
 
-Download `efficient-walker-v1.4.2-obf.jar` into your plugin project's `libs`
+Download `efficient-walker-v1.5.0-obf.jar` into your plugin project's `libs`
 directory, then add it as a runtime dependency:
 
 ```groovy
 dependencies {
     compileOnly files('libs/microbot.jar')
-    implementation files('libs/efficient-walker-v1.4.2-obf.jar')
+    implementation files('libs/efficient-walker-v1.5.0-obf.jar')
 }
 ```
 
@@ -109,6 +110,6 @@ sideload it when the client already bundles Efficient Walker.
 
 ### Release files
 
-- `releases/efficient-walker/v1.4.2/efficient-walker-v1.4.2-obf.jar`
+- `releases/efficient-walker/v1.5.0/efficient-walker-v1.5.0-obf.jar`
 
 The JAR has a neighboring `.sha256` checksum file.
