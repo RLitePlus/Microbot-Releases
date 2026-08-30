@@ -24,7 +24,9 @@ data, and the live RuneLite scene.
 - Use eligible agility shortcuts only when their current skill, item,
   equipment, quest, varbit, and varp requirements pass. When a chosen route
   needs climbing boots, a crossbow, or a Mith grapple already in the inventory,
-  Efficient Walker equips it before moving.
+  Efficient Walker equips it before moving. Agility shortcuts are enabled by
+  default, while grapple shortcuts can be enabled separately in the plugin
+  settings.
 - Preview routes from scene tiles or the world map with `Dry-run walk`, execute
   them with `Test walk`, display per-floor overlays, or accept a destination
   through `EfficientWalker#walkTo(WorldPoint)`.
@@ -52,13 +54,13 @@ every location having been manually tested.
 
 #### 1. Add the release JAR
 
-Download `efficient-walker-v1.5.0-obf.jar` into your plugin project's `libs`
+Download `efficient-walker-v1.5.1-obf.jar` into your plugin project's `libs`
 directory, then add it as a runtime dependency:
 
 ```groovy
 dependencies {
     compileOnly files('libs/microbot.jar')
-    implementation files('libs/efficient-walker-v1.5.0-obf.jar')
+    implementation files('libs/efficient-walker-v1.5.1-obf.jar')
 }
 ```
 
@@ -110,6 +112,6 @@ sideload it when the client already bundles Efficient Walker.
 
 ### Release files
 
-- `releases/efficient-walker/v1.5.0/efficient-walker-v1.5.0-obf.jar`
+- `releases/efficient-walker/v1.5.1/efficient-walker-v1.5.1-obf.jar`
 
 The JAR has a neighboring `.sha256` checksum file.
