@@ -62,13 +62,13 @@ every location having been manually tested.
 
 #### 1. Add the release JAR
 
-Download `efficient-walker-v1.7.0-obf.jar` into your plugin project's `libs`
+Download `efficient-walker-v1.7.1-obf.jar` into your plugin project's `libs`
 directory, then add it as a runtime dependency:
 
 ```groovy
 dependencies {
     compileOnly files('libs/microbot.jar')
-    implementation files('libs/efficient-walker-v1.7.0-obf.jar')
+    implementation files('libs/efficient-walker-v1.7.1-obf.jar')
 }
 ```
 
@@ -123,6 +123,6 @@ sideload it when the client already bundles Efficient Walker.
 
 ### Release files
 
-- `releases/efficient-walker/v1.7.0/efficient-walker-v1.7.0-obf.jar`
+- `releases/efficient-walker/v1.7.1/efficient-walker-v1.7.1-obf.jar`
 
 The JAR has a neighboring `.sha256` checksum file.
