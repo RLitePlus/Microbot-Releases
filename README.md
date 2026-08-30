@@ -30,6 +30,9 @@ data, and the live RuneLite scene.
 - Use ordinary object transports gated by a skill level or completed quest when
   the requirement passes. These transitions remain directional, so an eligible
   entrance does not create an unrestricted reverse route.
+- Use supported Standard spellbook teleports and teleport tablets when their
+  level, quest, rune, item, and destination requirements pass. Teleport use is
+  enabled by default and can be disabled in the plugin settings.
 - Preview routes from scene tiles or the world map with `Dry-run walk`, execute
   them with `Test walk`, display per-floor overlays, or accept a destination
   through `EfficientWalker#walkTo(WorldPoint)`. Integrations can cancel an
@@ -44,8 +47,9 @@ every location having been manually tested.
 
 - Global routing is limited to the bundled collision map and supported
   transitions. Unmapped areas and global or multi-plane instances are rejected.
-- Teleports, boats and ferries, NPC transports, payment transports, and general
-  dialogue transports are not supported.
+- Boats and ferries, NPC transports, payment transports, and general dialogue
+  transports are not supported.
+- Wilderness routes and teleports that land in the Wilderness are excluded.
 - Ordinary item-gated transports remain excluded. Eligible agility shortcuts
   and direct skill- or quest-gated object transports have verified checks.
 - Boundary handling supports loaded wall objects with `Open` or `Pass`. Other
@@ -58,13 +62,13 @@ every location having been manually tested.
 
 #### 1. Add the release JAR
 
-Download `efficient-walker-v1.6.0-obf.jar` into your plugin project's `libs`
+Download `efficient-walker-v1.7.0-obf.jar` into your plugin project's `libs`
 directory, then add it as a runtime dependency:
 
 ```groovy
 dependencies {
     compileOnly files('libs/microbot.jar')
-    implementation files('libs/efficient-walker-v1.6.0-obf.jar')
+    implementation files('libs/efficient-walker-v1.7.0-obf.jar')
 }
 ```
 
@@ -119,6 +123,6 @@ sideload it when the client already bundles Efficient Walker.
 
 ### Release files
 
-- `releases/efficient-walker/v1.6.0/efficient-walker-v1.6.0-obf.jar`
+- `releases/efficient-walker/v1.7.0/efficient-walker-v1.7.0-obf.jar`
 
 The JAR has a neighboring `.sha256` checksum file.
