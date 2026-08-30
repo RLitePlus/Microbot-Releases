@@ -1,0 +1,55 @@
+name: Post release to Discord
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Release tag to post
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Read release details
+        id: release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ github.event.release.tag_name || inputs.tag }}
+        run: |
+          set -euo pipefail
+          mkdir release
+          gh release view "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --json name,body,url,assets > release/release.json
+          jar="$(jq -cer '[.assets[] | select(.name | endswith("-obf.jar"))] | if length == 1 then .[0] else error("Expected exactly one obfuscated JAR") end' release/release.json)"
+          echo "jar_name=$(jq -r .name <<< "$jar")" >> "$GITHUB_OUTPUT"
+          echo "jar_url=$(jq -r .url <<< "$jar")" >> "$GITHUB_OUTPUT"
+
+      - name: Post release to Discord
+        env:
+          DISCORD_RELEASE_WEBHOOK: ${{ secrets.DISCORD_RELEASE_WEBHOOK }}
+          JAR_NAME: ${{ steps.release.outputs.jar_name }}
+          JAR_URL: ${{ steps.release.outputs.jar_url }}
+        run: |
+          set -euo pipefail
+          payload="$(jq -c \
+            --arg filename "$JAR_NAME" \
+            --arg jar_url "$JAR_URL" \
+            '{
+              allowed_mentions: {parse: []},
+              embeds: [{
+                title: .name,
+                url: .url,
+                description: ((if (.body // "") == "" then "No release notes provided." else .body[0:3700] end) + "\n\n<:java:1543429565328916531> [" + $filename + "](" + $jar_url + ")"),
+                color: 15105570
+              }]
+            }' release/release.json)"
+          curl --fail-with-body --retry 3 --retry-all-errors \
+            --header 'Content-Type: application/json' \
+            --data "$payload" \
+            "$DISCORD_RELEASE_WEBHOOK"
