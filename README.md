@@ -1,7 +1,24 @@
 # Microbot releases
 
-Downloadable releases for Mahogany Homes and Efficient Walker plugins for
-Microbot.
+Downloadable releases for Enchanter, Mahogany Homes, and Efficient Walker
+plugins for Microbot.
+
+## Enchanter
+
+- Enchants all 40 supported standard jewellery targets and all 20 tipped-bolt
+  targets directly from the bank.
+- Automatically uses suitable staves, charged tomes, rune-pouch supplies, and
+  supported alternative runes.
+- Supports Sapphire, Emerald, Ruby, and Diamond amulets on free-to-play worlds;
+  all other targets require membership.
+
+Efficient Walker v1.9.1 must be installed and enabled.
+
+### Release files
+
+- `releases/enchanter/v1.0.0/enchanter-v1.0.0-obf.jar`
+
+The JAR has a neighboring `.sha256` checksum file.
 
 ## Mahogany Homes
 
