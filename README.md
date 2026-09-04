@@ -30,13 +30,9 @@ and input APIs, but it does not delegate routing, movement, doors, or transports
 to the Microbot walker. Routes come from its bundled collision map, transport
 data, and the live RuneLite scene.
 
-### What's new in v1.9.0
+### What's new in v1.9.1
 
-- Plugins using Efficient Walker can request a route to the nearest reachable
-  bank.
-- Navigate blocked and angled doors more reliably.
-- Travel between Port Sarim and Port Piscarilius using Veos or Cabin Boy
-  Herbert.
+- Minor optimizations.
 
 ### What it can do
 
@@ -132,13 +128,13 @@ every location having been manually tested.
 
 #### 1. Add the release JAR
 
-Download `efficient-walker-v1.9.0-obf.jar` into your plugin project's `libs`
+Download `efficient-walker-v1.9.1-obf.jar` into your plugin project's `libs`
 directory, then add it as a runtime dependency:
 
 ```groovy
 dependencies {
     compileOnly files('libs/microbot.jar')
-    implementation files('libs/efficient-walker-v1.9.0-obf.jar')
+    implementation files('libs/efficient-walker-v1.9.1-obf.jar')
 }
 ```
 
@@ -193,6 +189,6 @@ sideload it when the client already bundles Efficient Walker.
 
 ### Release files
 
-- `releases/efficient-walker/v1.9.0/efficient-walker-v1.9.0-obf.jar`
+- `releases/efficient-walker/v1.9.1/efficient-walker-v1.9.1-obf.jar`
 
 The JAR has a neighboring `.sha256` checksum file.
