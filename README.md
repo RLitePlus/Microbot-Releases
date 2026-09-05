@@ -1,7 +1,28 @@
 # Microbot releases
 
-Downloadable releases for Enchanter, Mahogany Homes, and Efficient Walker
+Downloadable releases for Giants' Foundry, Enchanter, Mahogany Homes, and Efficient Walker
 plugins for Microbot.
+
+## Giants' Foundry
+
+- Automatically completes commissions, selects moulds, refines swords, and hands them in.
+- Supports 23 metal recipe presets and cooling with ice gloves or a bucket of water.
+- Runs until turned off, safely storing unfinished swords when stopping.
+- Tracks runtime, activity, completed swords, Smithing XP, XP per hour, reputation, and bonuses.
+
+Complete Sleeping Giants and start inside the Foundry on a normal members world.
+Install and enable exactly one Efficient Walker v1.9.2. Select your recipe and
+cooling method, and keep the required bars in your bank or inventory.
+
+Wait for stopping to finish before leaving or starting another activity. Safe
+storage requires a connected game session and active Efficient Walker; an error
+message explains when storage cannot be confirmed.
+
+### Release files
+
+- `releases/giants-foundry/v1.0.0/giants-foundry-v1.0.0-obf.jar`
+
+The JAR has a neighboring `.sha256` checksum file.
 
 ## Enchanter
 
@@ -12,11 +33,11 @@ plugins for Microbot.
 - Supports Sapphire, Emerald, Ruby, and Diamond amulets on free-to-play worlds;
   all other targets require membership.
 
-Efficient Walker v1.9.1 must be installed and enabled.
+Efficient Walker v1.9.2 must be installed and enabled.
 
 ### Release files
 
-- `releases/enchanter/v1.0.0/enchanter-v1.0.0-obf.jar`
+- `releases/enchanter/v1.0.1/enchanter-v1.0.1-obf.jar`
 
 The JAR has a neighboring `.sha256` checksum file.
 
@@ -36,7 +57,7 @@ Efficient Walker must be installed and enabled.
 
 ### Release files
 
-- `releases/mahogany-homes/v1.0.0/mahogany-homes-v1.0.0-obf.jar`
+- `releases/mahogany-homes/v1.0.1/mahogany-homes-v1.0.1-obf.jar`
 
 The JAR has a neighboring `.sha256` checksum file.
 
@@ -47,9 +68,9 @@ and input APIs, but it does not delegate routing, movement, doors, or transports
 to the Microbot walker. Routes come from its bundled collision map, transport
 data, and the live RuneLite scene.
 
-### What's new in v1.9.1
+### What's new in v1.9.2
 
-- Minor optimizations.
+- Update error logging.
 
 ### What it can do
 
@@ -145,13 +166,13 @@ every location having been manually tested.
 
 #### 1. Add the release JAR
 
-Download `efficient-walker-v1.9.1-obf.jar` into your plugin project's `libs`
+Download `efficient-walker-v1.9.2-obf.jar` into your plugin project's `libs`
 directory, then add it as a runtime dependency:
 
 ```groovy
 dependencies {
     compileOnly files('libs/microbot.jar')
-    implementation files('libs/efficient-walker-v1.9.1-obf.jar')
+    implementation files('libs/efficient-walker-v1.9.2-obf.jar')
 }
 ```
 
@@ -206,6 +227,6 @@ sideload it when the client already bundles Efficient Walker.
 
 ### Release files
 
-- `releases/efficient-walker/v1.9.1/efficient-walker-v1.9.1-obf.jar`
+- `releases/efficient-walker/v1.9.2/efficient-walker-v1.9.2-obf.jar`
 
 The JAR has a neighboring `.sha256` checksum file.
