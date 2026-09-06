@@ -1,7 +1,34 @@
 # Microbot releases
 
-Downloadable releases for Giants' Foundry, Enchanter, Mahogany Homes, and Efficient Walker
+Downloadable releases for Tithe Farm, Giants' Foundry, Enchanter, Mahogany Homes, and Efficient Walker
 plugins for Microbot.
+
+## Tithe Farm
+
+- Runs Lazy (20 plants) or Moderate (23 plants) until turned off.
+- Selects eligible carried seeds, refills ordinary watering cans, waters crops,
+  harvests fruit, and deposits it.
+- Shows runtime, activity, fruit, Farming XP, XP per hour, and points.
+
+Start inside a cleared Tithe Farm instance with a Spade, Seed dibber, eligible
+Tithe seeds, one free inventory slot, and at least eight ordinary watering cans
+for Lazy or nine for Moderate. Open the inventory tab and clear any selected item.
+Install and enable exactly one Efficient Walker v1.9.3.
+
+Mode is the only setting. Turning the plugin off stops inputs immediately;
+finish tending any interrupted crops before restarting. The plugin waits for
+full run energy before planting. Gricoller's can, bare-handed planting,
+automatic travel, and Efficient mode are not supported.
+
+Tithe Farm requires Walker v1.9.3. The current Enchanter and Giants' Foundry
+releases require v1.9.2; use the matching Walker version for the plugin you run
+and do not install both Walker versions together.
+
+### Release files
+
+- `releases/tithe-farm/v1.0.0/tithe-farm-v1.0.0-obf.jar`
+
+The JAR has a neighboring `.sha256` checksum file.
 
 ## Giants' Foundry
 
@@ -68,9 +95,9 @@ and input APIs, but it does not delegate routing, movement, doors, or transports
 to the Microbot walker. Routes come from its bundled collision map, transport
 data, and the live RuneLite scene.
 
-### What's new in v1.9.2
+### What's new in v1.9.3
 
-- Update error logging.
+- Minor optimizations.
 
 ### What it can do
 
@@ -166,13 +193,13 @@ every location having been manually tested.
 
 #### 1. Add the release JAR
 
-Download `efficient-walker-v1.9.2-obf.jar` into your plugin project's `libs`
+Download `efficient-walker-v1.9.3-obf.jar` into your plugin project's `libs`
 directory, then add it as a runtime dependency:
 
 ```groovy
 dependencies {
     compileOnly files('libs/microbot.jar')
-    implementation files('libs/efficient-walker-v1.9.2-obf.jar')
+    implementation files('libs/efficient-walker-v1.9.3-obf.jar')
 }
 ```
 
@@ -227,6 +254,6 @@ sideload it when the client already bundles Efficient Walker.
 
 ### Release files
 
-- `releases/efficient-walker/v1.9.2/efficient-walker-v1.9.2-obf.jar`
+- `releases/efficient-walker/v1.9.3/efficient-walker-v1.9.3-obf.jar`
 
 The JAR has a neighboring `.sha256` checksum file.
