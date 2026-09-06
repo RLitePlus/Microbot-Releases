@@ -6,19 +6,21 @@ plugins for Microbot.
 ## Tithe Farm
 
 - Runs Lazy (20 plants) or Moderate (23 plants) until turned off.
-- Selects eligible carried seeds, refills ordinary watering cans, waters crops,
+- Selects eligible carried seeds, refills watering cans, waters crops,
   harvests fruit, and deposits it.
-- Shows runtime, activity, fruit, Farming XP, XP per hour, and points.
+- Shows runtime, activity, fruit, remaining water, Farming XP, XP per hour, and points.
 
 Start inside a cleared Tithe Farm instance with a Spade, Seed dibber, eligible
-Tithe seeds, one free inventory slot, and at least eight ordinary watering cans
-for Lazy or nine for Moderate. Open the inventory tab and clear any selected item.
+Tithe seeds, one free inventory slot, and Gricoller's can or at least eight ordinary
+watering cans for Lazy or nine for Moderate. Open the inventory tab and clear any selected item.
 Install and enable exactly one Efficient Walker v1.9.3.
 
 Mode is the only setting. Turning the plugin off stops inputs immediately;
 finish tending any interrupted crops before restarting. The plugin waits for
-full run energy before planting. Gricoller's can, bare-handed planting,
-automatic travel, and Efficient mode are not supported.
+full run energy before planting. Gricoller's can is detected automatically and
+refilled when combined carried water cannot cover another full cycle. Ordinary
+cans are used first when both types are carried. Bare-handed planting, automatic
+travel, and Efficient mode are not supported.
 
 Tithe Farm requires Walker v1.9.3. The current Enchanter and Giants' Foundry
 releases require v1.9.2; use the matching Walker version for the plugin you run
@@ -26,7 +28,7 @@ and do not install both Walker versions together.
 
 ### Release files
 
-- `releases/tithe-farm/v1.0.0/tithe-farm-v1.0.0-obf.jar`
+- `releases/tithe-farm/v1.1.0/tithe-farm-v1.1.0-obf.jar`
 
 The JAR has a neighboring `.sha256` checksum file.
 
