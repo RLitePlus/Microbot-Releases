@@ -98,10 +98,12 @@ and input APIs, but it does not delegate routing, movement, doors, or transports
 to the Microbot walker. Routes come from its bundled collision map, transport
 data, and the live RuneLite scene.
 
-### What's new in v1.9.4
+### What's new in v1.10.0
 
-- Fixed startup compatibility with the standard Microbot client.
-- Minor optimizations.
+- Added automatic fairy-ring travel, including equipping a carried Dramen or Lunar staff.
+- Added a **Use fairy rings** setting, enabled by default.
+- Improved fairy-ring access checks for partially completed quests.
+- Allowed Antiban and natural mouse to run with Efficient Walker under your normal settings.
 
 ### What it can do
 
@@ -131,6 +133,13 @@ data, and the live RuneLite scene.
   them with `Test walk`, display per-floor overlays, or accept a destination
   through `EfficientWalker#walkTo(WorldPoint)`. Integrations can cancel an
   active request and read its current status or planning failure.
+
+### Fairy rings
+
+**Use fairy rings** is enabled by default under **Route modification**. Carry a
+Dramen or Lunar staff unless you have completed the Lumbridge & Draynor Elite
+Diary. The walker checks your access requirements before considering a ring.
+House rings, the Fairy Resistance Hideout sequence, and DLP are not supported.
 
 ### Supported teleports
 
@@ -197,13 +206,13 @@ every location having been manually tested.
 
 #### 1. Add the release JAR
 
-Download `efficient-walker-v1.9.4-obf.jar` into your plugin project's `libs`
+Download `efficient-walker-v1.10.0-obf.jar` into your plugin project's `libs`
 directory, then add it as a runtime dependency:
 
 ```groovy
 dependencies {
     compileOnly files('libs/microbot.jar')
-    implementation files('libs/efficient-walker-v1.9.4-obf.jar')
+    implementation files('libs/efficient-walker-v1.10.0-obf.jar')
 }
 ```
 
@@ -258,6 +267,6 @@ sideload it when the client already bundles Efficient Walker.
 
 ### Release files
 
-- `releases/efficient-walker/v1.9.4/efficient-walker-v1.9.4-obf.jar`
+- `releases/efficient-walker/v1.10.0/efficient-walker-v1.10.0-obf.jar`
 
 The JAR has a neighboring `.sha256` checksum file.
