@@ -10,25 +10,26 @@ plugins for Microbot.
   harvests fruit, and deposits it.
 - Shows runtime, activity, fruit, remaining water, Farming XP, XP per hour, and points.
 
-Start inside a cleared Tithe Farm instance with a Spade, Seed dibber, eligible
+Start inside a cleared Tithe Farm instance with a Spade, eligible
 Tithe seeds, one free inventory slot, and Gricoller's can or at least eight ordinary
 watering cans for Lazy or nine for Moderate. Open the inventory tab and clear any selected item.
-Install and enable exactly one Efficient Walker v1.9.3.
+Install and enable exactly one compatible Efficient Walker. Bring a Seed dibber
+unless you have completed bare-handed planting training with Otto Godblessed.
 
 Mode is the only setting. Turning the plugin off stops inputs immediately;
 finish tending any interrupted crops before restarting. The plugin waits for
 full run energy before planting. Gricoller's can is detected automatically and
 refilled when combined carried water cannot cover another full cycle. Ordinary
-cans are used first when both types are carried. Bare-handed planting, automatic
-travel, and Efficient mode are not supported.
+cans are used first when both types are carried. Automatic travel and Efficient
+mode are not supported.
 
-Tithe Farm requires Walker v1.9.3. The current Enchanter and Giants' Foundry
-releases require v1.9.2; use the matching Walker version for the plugin you run
-and do not install both Walker versions together.
+These releases support the standard `chsami/Microbot` main-branch client.
+Install only one Efficient Walker JAR. These releases no longer require
+one exact Walker version.
 
 ### Release files
 
-- `releases/tithe-farm/v1.1.0/tithe-farm-v1.1.0-obf.jar`
+- `releases/tithe-farm/v1.2.0/tithe-farm-v1.2.0-obf.jar`
 
 The JAR has a neighboring `.sha256` checksum file.
 
@@ -40,7 +41,7 @@ The JAR has a neighboring `.sha256` checksum file.
 - Tracks runtime, activity, completed swords, Smithing XP, XP per hour, reputation, and bonuses.
 
 Complete Sleeping Giants and start inside the Foundry on a normal members world.
-Install and enable exactly one Efficient Walker v1.9.2. Select your recipe and
+Install and enable exactly one compatible Efficient Walker. Select your recipe and
 cooling method, and keep the required bars in your bank or inventory.
 
 Wait for stopping to finish before leaving or starting another activity. Safe
@@ -49,7 +50,7 @@ message explains when storage cannot be confirmed.
 
 ### Release files
 
-- `releases/giants-foundry/v1.0.0/giants-foundry-v1.0.0-obf.jar`
+- `releases/giants-foundry/v1.0.1/giants-foundry-v1.0.1-obf.jar`
 
 The JAR has a neighboring `.sha256` checksum file.
 
@@ -62,11 +63,11 @@ The JAR has a neighboring `.sha256` checksum file.
 - Supports Sapphire, Emerald, Ruby, and Diamond amulets on free-to-play worlds;
   all other targets require membership.
 
-Efficient Walker v1.9.2 must be installed and enabled.
+Exactly one compatible Efficient Walker must be installed and enabled.
 
 ### Release files
 
-- `releases/enchanter/v1.0.1/enchanter-v1.0.1-obf.jar`
+- `releases/enchanter/v1.0.2/enchanter-v1.0.2-obf.jar`
 
 The JAR has a neighboring `.sha256` checksum file.
 
@@ -82,11 +83,11 @@ The JAR has a neighboring `.sha256` checksum file.
   teleports, and shows contract and Construction XP metrics in its optional
   overlay.
 
-Efficient Walker must be installed and enabled.
+Exactly one compatible Efficient Walker must be installed and enabled.
 
 ### Release files
 
-- `releases/mahogany-homes/v1.0.1/mahogany-homes-v1.0.1-obf.jar`
+- `releases/mahogany-homes/v1.0.2/mahogany-homes-v1.0.2-obf.jar`
 
 The JAR has a neighboring `.sha256` checksum file.
 
@@ -97,8 +98,9 @@ and input APIs, but it does not delegate routing, movement, doors, or transports
 to the Microbot walker. Routes come from its bundled collision map, transport
 data, and the live RuneLite scene.
 
-### What's new in v1.9.3
+### What's new in v1.9.4
 
+- Fixed startup compatibility with the standard Microbot client.
 - Minor optimizations.
 
 ### What it can do
@@ -195,13 +197,13 @@ every location having been manually tested.
 
 #### 1. Add the release JAR
 
-Download `efficient-walker-v1.9.3-obf.jar` into your plugin project's `libs`
+Download `efficient-walker-v1.9.4-obf.jar` into your plugin project's `libs`
 directory, then add it as a runtime dependency:
 
 ```groovy
 dependencies {
     compileOnly files('libs/microbot.jar')
-    implementation files('libs/efficient-walker-v1.9.3-obf.jar')
+    implementation files('libs/efficient-walker-v1.9.4-obf.jar')
 }
 ```
 
@@ -256,6 +258,6 @@ sideload it when the client already bundles Efficient Walker.
 
 ### Release files
 
-- `releases/efficient-walker/v1.9.3/efficient-walker-v1.9.3-obf.jar`
+- `releases/efficient-walker/v1.9.4/efficient-walker-v1.9.4-obf.jar`
 
 The JAR has a neighboring `.sha256` checksum file.
