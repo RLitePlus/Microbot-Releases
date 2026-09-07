@@ -98,12 +98,12 @@ and input APIs, but it does not delegate routing, movement, doors, or transports
 to the Microbot walker. Routes come from its bundled collision map, transport
 data, and the live RuneLite scene.
 
-### What's new in v1.10.0
+### What's new in v1.11.0
 
-- Added automatic fairy-ring travel, including equipping a carried Dramen or Lunar staff.
-- Added a **Use fairy rings** setting, enabled by default.
-- Improved fairy-ring access checks for partially completed quests.
-- Allowed Antiban and natural mouse to run with Efficient Walker under your normal settings.
+- Added tile countdowns showing the remaining walking distance.
+- Route tiles now change from orange through yellow to green as you approach.
+- Doors, stairs, and teleports use purple action markers without tile counts.
+- Tile numbers stay visible above route highlights.
 
 ### What it can do
 
@@ -206,13 +206,13 @@ every location having been manually tested.
 
 #### 1. Add the release JAR
 
-Download `efficient-walker-v1.10.0-obf.jar` into your plugin project's `libs`
+Download `efficient-walker-v1.11.0-obf.jar` into your plugin project's `libs`
 directory, then add it as a runtime dependency:
 
 ```groovy
 dependencies {
     compileOnly files('libs/microbot.jar')
-    implementation files('libs/efficient-walker-v1.10.0-obf.jar')
+    implementation files('libs/efficient-walker-v1.11.0-obf.jar')
 }
 ```
 
@@ -267,6 +267,6 @@ sideload it when the client already bundles Efficient Walker.
 
 ### Release files
 
-- `releases/efficient-walker/v1.10.0/efficient-walker-v1.10.0-obf.jar`
+- `releases/efficient-walker/v1.11.0/efficient-walker-v1.11.0-obf.jar`
 
 The JAR has a neighboring `.sha256` checksum file.
