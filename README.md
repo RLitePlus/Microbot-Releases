@@ -73,6 +73,13 @@ The JAR has a neighboring `.sha256` checksum file.
 
 ## Mahogany Homes
 
+### What's new in v1.0.3
+
+- Restarting now checks your current contract, preventing trips back to an old homeowner after completing or changing contracts manually.
+- Minor optimizations.
+
+### What it can do
+
 - Completes Beginner, Novice, Adept, and Expert contracts across every
   supported homeowner.
 - Prepares contract supplies and stocks supported teleport tablets and runes
@@ -87,7 +94,7 @@ Exactly one compatible Efficient Walker must be installed and enabled.
 
 ### Release files
 
-- `releases/mahogany-homes/v1.0.2/mahogany-homes-v1.0.2-obf.jar`
+- `releases/mahogany-homes/v1.0.3/mahogany-homes-v1.0.3-obf.jar`
 
 The JAR has a neighboring `.sha256` checksum file.
 
