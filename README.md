@@ -105,19 +105,20 @@ and input APIs, but it does not delegate routing, movement, doors, or transports
 to the Microbot walker. Routes come from its bundled collision map, transport
 data, and the live RuneLite scene.
 
-### What's new in v1.11.1
+### What's new in v1.11.2
 
-- Bot Mouse now stays under your control while Efficient Walker is active.
-- Minor optimizations.
+- Start **Automate quest steps** once to follow supported Quest Helper steps, including walking, interactions, dialogue, and item use. Quest Helper must be installed and enabled.
+- Enable **Use items from bank** to fetch supported teleport items or spell runes when the bank visit makes travel worthwhile.
+- Travel through supported quetzal landing sites and use eligible quetzal whistles.
+- Automatically exclude members-only teleport spells and items on free-to-play worlds.
 
 ### What it can do
 
 - Walk local or long-distance routes and chain supported transitions across
   multiple floors. Scene changes rebuild the remaining route from the player's
   current position instead of restarting the request.
-- Detect live doors and gates with `Open` or `Pass`, open them before crossing,
-  and exclude a refused boundary after three attempts so an alternate route can
-  be used when one exists.
+- Open supported live doors and gates before crossing. Rejected access stops
+  the walk with an actionable error; cancelled and failed walks clear the route.
 - Use stairs, ladders, trapdoors, climbing ropes, passages, tunnels, cave
   entrances, portals, lift platforms, gangplanks, bridges, rocks, cracks,
   chasms, ropeswings, rubble, shelves, and other proven object transports.
@@ -138,6 +139,29 @@ data, and the live RuneLite scene.
   them with `Test walk`, display per-floor overlays, or accept a destination
   through `EfficientWalker#walkTo(WorldPoint)`. Integrations can cancel an
   active request and read its current status or planning failure.
+
+### Quest assistance
+
+Install and enable Quest Helper, select a quest, and assign **Walk to quest step**
+under **Hotkeys**. Press it to walk to a reachable tile beside the current target.
+Enable **Automate quest steps** under **General** to continue through supported
+steps from one press, including NPC and object actions, dialogue, and item use.
+Movement and world interactions pause during cutscenes; visible dialogue can
+continue. Unsupported or ambiguous steps require manual handling.
+
+The hotkeys appear in this order: **Walk to nearest bank**, **Walk to quest step**,
+**Cancel walk**. Cancel stops both walking and quest automation.
+
+### Bank-assisted travel
+
+Enable **Use items from bank** under **Route modification** to consider cached
+bank supplies when planning a route. If the detour saves travel time, Walker
+visits a bank, withdraws the needed supported teleport item or missing spell
+runes, and continues to the original destination. Open your bank once to make
+its contents available for planning. Use Item withdrawal mode and complete any
+bank PIN prompt when requested.
+
+Members-only teleport spells and items are excluded on free-to-play worlds.
 
 ### Fairy rings
 
@@ -211,13 +235,13 @@ every location having been manually tested.
 
 #### 1. Add the release JAR
 
-Download `efficient-walker-v1.11.1-obf.jar` into your plugin project's `libs`
+Download `efficient-walker-v1.11.2-obf.jar` into your plugin project's `libs`
 directory, then add it as a runtime dependency:
 
 ```groovy
 dependencies {
     compileOnly files('libs/microbot.jar')
-    implementation files('libs/efficient-walker-v1.11.1-obf.jar')
+    implementation files('libs/efficient-walker-v1.11.2-obf.jar')
 }
 ```
 
@@ -272,6 +296,6 @@ sideload it when the client already bundles Efficient Walker.
 
 ### Release files
 
-- `releases/efficient-walker/v1.11.1/efficient-walker-v1.11.1-obf.jar`
+- `releases/efficient-walker/v1.11.2/efficient-walker-v1.11.2-obf.jar`
 
 The JAR has a neighboring `.sha256` checksum file.
