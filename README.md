@@ -105,12 +105,12 @@ and input APIs, but it does not delegate routing, movement, doors, or transports
 to the Microbot walker. Routes come from its bundled collision map, transport
 data, and the live RuneLite scene.
 
-### What's new in v1.11.2
+### What's new in v1.12.0
 
-- Start **Automate quest steps** once to follow supported Quest Helper steps, including walking, interactions, dialogue, and item use. Quest Helper must be installed and enabled.
-- Enable **Use items from bank** to fetch supported teleport items or spell runes when the bank visit makes travel worthwhile.
-- Travel through supported quetzal landing sites and use eligible quetzal whistles.
-- Automatically exclude members-only teleport spells and items on free-to-play worlds.
+- Travel with Primio between Varrock and Civitas illa Fortis after completing Children of the Sun and unlocking the first journey on a members world.
+- Use eligible banked teleport supplies when no direct route is available. Leave enough empty inventory slots for the required supplies.
+- Avoid premature stops near your destination while an existing walking click is still moving you there.
+- Improved bird-flight completion checks and route cleanup on logout.
 
 ### What it can do
 
@@ -235,13 +235,13 @@ every location having been manually tested.
 
 #### 1. Add the release JAR
 
-Download `efficient-walker-v1.11.2-obf.jar` into your plugin project's `libs`
+Download `efficient-walker-v1.12.0-obf.jar` into your plugin project's `libs`
 directory, then add it as a runtime dependency:
 
 ```groovy
 dependencies {
     compileOnly files('libs/microbot.jar')
-    implementation files('libs/efficient-walker-v1.11.2-obf.jar')
+    implementation files('libs/efficient-walker-v1.12.0-obf.jar')
 }
 ```
 
@@ -296,6 +296,6 @@ sideload it when the client already bundles Efficient Walker.
 
 ### Release files
 
-- `releases/efficient-walker/v1.11.2/efficient-walker-v1.11.2-obf.jar`
+- `releases/efficient-walker/v1.12.0/efficient-walker-v1.12.0-obf.jar`
 
 The JAR has a neighboring `.sha256` checksum file.
