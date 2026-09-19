@@ -105,12 +105,13 @@ and input APIs, but it does not delegate routing, movement, doors, or transports
 to the Microbot walker. Routes come from its bundled collision map, transport
 data, and the live RuneLite scene.
 
-### What's new in v1.12.0
+### What's new in v1.13.0
 
-- Travel with Primio between Varrock and Civitas illa Fortis after completing Children of the Sun and unlocking the first journey on a members world.
-- Use eligible banked teleport supplies when no direct route is available. Leave enough empty inventory slots for the required supplies.
-- Avoid premature stops near your destination while an existing walking click is still moving you there.
-- Improved bird-flight completion checks and route cleanup on logout.
+- Travel across the complete charter network, covering every charter ship NPC and destination across 21 ports.
+- Use 13 overworld Spirit Tree destinations when their requirements and unlocks are met.
+- Withdraw the exact Coins needed for a beneficial charter route when **Use items from bank** is enabled, combining the withdrawal with other required travel supplies.
+- Route correctly through Zanaris, including bank access, the diamond-gated magic door, and equipping an owned Dramen or Lunar staff before entering the shed.
+- Improve quest-target approaches, transition recovery, cancellation, and actionable failure messages.
 
 ### What it can do
 
@@ -156,8 +157,9 @@ The hotkeys appear in this order: **Walk to nearest bank**, **Walk to quest step
 
 Enable **Use items from bank** under **Route modification** to consider cached
 bank supplies when planning a route. If the detour saves travel time, Walker
-visits a bank, withdraws the needed supported teleport item or missing spell
-runes, and continues to the original destination. Open your bank once to make
+visits a bank, withdraws the needed supported teleport item, missing spell runes, or exact
+charter fare, and continues to the original destination. Compatible supplies are
+withdrawn during the same bank visit. Open your bank once to make
 its contents available for planning. Use Item withdrawal mode and complete any
 bank PIN prompt when requested.
 
@@ -220,8 +222,11 @@ every location having been manually tested.
 
 - Global routing is limited to the bundled collision map and supported
   transitions. Unmapped areas and global or multi-plane instances are rejected.
-- Boats and ferries, NPC transports, payment transports, and general dialogue
-  transports are not supported.
+- Charter ships and the listed Spirit Tree network are supported. Other boats,
+  ferries, NPC transports, payment transports, and general dialogue transports
+  require explicit support.
+- Player-owned-house Spirit Trees are excluded because house instances do not
+  have a stable global destination.
 - Wilderness routes and teleports that land in the Wilderness are excluded.
 - Ordinary item-gated transports remain excluded. Eligible agility shortcuts
   and direct skill- or quest-gated object transports have verified checks.
@@ -235,13 +240,13 @@ every location having been manually tested.
 
 #### 1. Add the release JAR
 
-Download `efficient-walker-v1.12.0-obf.jar` into your plugin project's `libs`
+Download `efficient-walker-v1.13.0-obf.jar` into your plugin project's `libs`
 directory, then add it as a runtime dependency:
 
 ```groovy
 dependencies {
     compileOnly files('libs/microbot.jar')
-    implementation files('libs/efficient-walker-v1.12.0-obf.jar')
+    implementation files('libs/efficient-walker-v1.13.0-obf.jar')
 }
 ```
 
@@ -296,6 +301,6 @@ sideload it when the client already bundles Efficient Walker.
 
 ### Release files
 
-- `releases/efficient-walker/v1.12.0/efficient-walker-v1.12.0-obf.jar`
+- `releases/efficient-walker/v1.13.0/efficient-walker-v1.13.0-obf.jar`
 
 The JAR has a neighboring `.sha256` checksum file.
