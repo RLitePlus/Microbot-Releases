@@ -105,13 +105,11 @@ and input APIs, but it does not delegate routing, movement, doors, or transports
 to the Microbot walker. Routes come from its bundled collision map, transport
 data, and the live RuneLite scene.
 
-### What's new in v1.13.0
+### What's new in v1.14.0
 
-- Travel across the complete charter network, covering every charter ship NPC and destination across 21 ports.
-- Use 13 overworld Spirit Tree destinations when their requirements and unlocks are met.
-- Withdraw the exact Coins needed for a beneficial charter route when **Use items from bank** is enabled, combining the withdrawal with other required travel supplies.
-- Route correctly through Zanaris, including bank access, the diamond-gated magic door, and equipping an owned Dramen or Lunar staff before entering the shed.
-- Improve quest-target approaches, transition recovery, cancellation, and actionable failure messages.
+- Walk to the nearest supported prayer restoration location and use it, covering altars, shrines, and restoration pools across the world.
+- Expand travel support with the complete charter network, overworld Spirit Trees, player-grown Spirit Trees, and exact bank-assisted charter fares.
+- Improve quest-target approaches, route transitions, dialogue and item-use handling, cancellation, and actionable failure messages.
 
 ### What it can do
 
@@ -150,8 +148,9 @@ steps from one press, including NPC and object actions, dialogue, and item use.
 Movement and world interactions pause during cutscenes; visible dialogue can
 continue. Unsupported or ambiguous steps require manual handling.
 
-The hotkeys appear in this order: **Walk to nearest bank**, **Walk to quest step**,
-**Cancel walk**. Cancel stops both walking and quest automation.
+The hotkeys appear in this order: **Walk to nearest bank**, **Walk to altar**,
+**Walk to quest step**, **Cancel walk**. Cancel stops both walking and quest
+automation.
 
 ### Bank-assisted travel
 
@@ -301,6 +300,26 @@ sideload it when the client already bundles Efficient Walker.
 
 ### Release files
 
+- `releases/efficient-walker/v1.14.0/efficient-walker-v1.14.0-obf.jar`
+
+The JAR has a neighboring `.sha256` checksum file.
+
+### Previous release
+
 - `releases/efficient-walker/v1.13.0/efficient-walker-v1.13.0-obf.jar`
+
+The JAR has a neighboring `.sha256` checksum file.
+
+## Guardian
+
+- Automatically eats when HP is low.
+- Restores prayer when needed.
+- Dynamically selects the correct overhead prayer for each NPC.
+- Re-engages after eating or restoring prayer.
+- Emergency exits to the nearest bank when HP is critically low or supplies are exhausted.
+
+### Release files
+
+- `releases/guardian/v1.0.0/guardian-v1.0.0-obf.jar`
 
 The JAR has a neighboring `.sha256` checksum file.
