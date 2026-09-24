@@ -105,11 +105,12 @@ and input APIs, but it does not delegate routing, movement, doors, or transports
 to the Microbot walker. Routes come from its bundled collision map, transport
 data, and the live RuneLite scene.
 
-### What's new in v1.14.0
+### What's new in v1.15.0
 
-- Walk to the nearest supported prayer restoration location and use it, covering altars, shrines, and restoration pools across the world.
-- Expand travel support with the complete charter network, overworld Spirit Trees, player-grown Spirit Trees, and exact bank-assisted charter fares.
-- Improve quest-target approaches, route transitions, dialogue and item-use handling, cancellation, and actionable failure messages.
+- Added **Disable auto retaliate** under General, enabled by default. Turn it off to leave your current Auto Retaliate setting unchanged.
+- Improved routes to indoor NPCs and objects, including altars and upstairs furniture, to avoid stopping outside their room.
+- Fixed crashes when other plugins request **Walk to nearest bank**.
+- Minor optimizations.
 
 ### What it can do
 
@@ -300,7 +301,7 @@ sideload it when the client already bundles Efficient Walker.
 
 ### Release files
 
-- `releases/efficient-walker/v1.14.0/efficient-walker-v1.14.0-obf.jar`
+- `releases/efficient-walker/v1.15.0/efficient-walker-v1.15.0-obf.jar`
 
 The JAR has a neighboring `.sha256` checksum file.
 
